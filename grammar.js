@@ -15,9 +15,22 @@ module.exports = grammar({
       token.immediate('""')
     )),
 
+    _parens_value_content: $ => seq(
+      token.immediate('('),
+      repeat1(choice(
+        token.immediate(/[^"{]/),
+        token.immediate('""')
+      ))
+    ),
+
+    _non_parens_value_content: $ => seq(
+      token.immediate(/[^(]/),
+      optional($._value_content)
+    ),
+
     value: $ => seq(
       token('"'),
-      optional($._value_content),
+      optional(choice($._parens_value_content, $._non_parens_value_content)),
       token.immediate('"')
     ),
 
