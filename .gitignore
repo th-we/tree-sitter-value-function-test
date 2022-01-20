@@ -1,0 +1,7 @@
+bindings
+binding.gyp
+build
+Cargo.toml
+node_modules
+src
+
