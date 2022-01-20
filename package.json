@@ -2,13 +2,14 @@
   "name": "tree-sitter-value-function-test",
   "version": "0.0.0",
   "description": "Test how to let tree-sitter decide when a value is a function",
-  "main": "index.js",
+  "main": "bindings/node",
   "scripts": {
     "test": "node_modules/.bin/tree-sitter generate && node-gyp build && node_modules/.bin/tree-sitter test"
   },
   "author": "Thomas Weber",
   "devDependencies": {
-    "tree-sitter-cli": "^0.15.0"
+    "nan": "^2.15.0",
+    "tree-sitter-cli": "^0.20.1"
   },
   "repository": {
     "type": "git",
